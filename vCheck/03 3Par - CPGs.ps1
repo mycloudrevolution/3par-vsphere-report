@@ -27,7 +27,6 @@ ForEach ($CPG in $CPGs){
 
 $MyCollection3
 
-
 $Title = "3Par Total CPG Space allocation"
 $Header = "3Par Total CPG Space allocation"
 $Comments = "Only CPGs with VVs are listed."

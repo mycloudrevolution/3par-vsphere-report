@@ -1,6 +1,5 @@
-﻿# Start of Settings 
+# Start of Settings 
 # End of Settings
-
 
 # Import Default 3Par PS Modules
 Import-Module "C:\Windows\System32\WindowsPowerShell\v1.0\Modules\HP3PARPSToolkit\Logger.psm1"
@@ -170,8 +169,8 @@ ForEach ($DiskType in $DiskTypes){
     $Total | Add-Member -Name "Percent Used" -Value $Percentage -Membertype NoteProperty
     $MyCollection4 += $Total
 }
-$MyCollection4 | ft -AutoSize
 
+$MyCollection4
 
 $Title = "3Par physical Disk Usage"
 $Header = "3Par physical Disk Usage"

@@ -2,7 +2,6 @@
 # End of Settings
 $MyCollection2 =  New-Object System.Collections.ArrayList
 
-
 $Summary = New-object PSObject
 $Summary | Add-Member -Name vSphere-ProvisionedCapacityGB -Value ([math]::Round($CapacityGB_SUM ,2)) -Membertype NoteProperty
 $Summary | Add-Member -Name vSphere-UsedSpaceGB -Value ([math]::Round($UsedGB_SUM ,2)) -Membertype NoteProperty
@@ -17,7 +16,6 @@ $Summary | Add-Member -Name 3PAR-PercentUsed -Value $Percentage -Membertype Note
 $MyCollection2 += $Summary
 
 $MyCollection2
-
 
 $Title = "3Par Total vSphere Space allocation"
 $Header = "3Par Total vSphere Space allocation"

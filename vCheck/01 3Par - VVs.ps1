@@ -1,6 +1,6 @@
 # Start of Settings 
 # Do not report on any Datastores that are defined here (3PAR VVs Report Plugin)
-$DatastoreIgnore = "esx"
+$DatastoreIgnore = "local"
 # End of Settings
 
 $MyCollection =  New-Object System.Collections.ArrayList
@@ -16,7 +16,6 @@ if ($DatastoreIgnore){
 else {
     $OutputDatastoresUnsorted = @($Datastores | Select-Object Name, Type, @{N="CapacityGB";E={[math]::Round($_.CapacityGB,2)}}, @{N="FreeSpaceGB";E={[math]::Round($_.FreeSpaceGB,2)}}, @{N="UsedSpaceGB";E={[math]::Round($_.CapacityGB - $_.FreeSpaceGB,2)}})
 }
-
 
 $OutputDatastores = $OutputDatastoresUnsorted | Select *, @{N="NumCPGs";E={@((Get-3parVV -vvName $_.Name).count)}} | Sort-Object -Descending NumCPGs, Name
 
